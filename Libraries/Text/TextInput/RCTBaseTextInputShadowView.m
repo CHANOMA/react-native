@@ -25,6 +25,7 @@
   NSAttributedString *_Nullable _localAttributedText;
   CGSize _previousContentSize;
 
+  NSString *_text;
   NSTextStorage *_textStorage;
   NSTextContainer *_textContainer;
   NSLayoutManager *_layoutManager;
@@ -95,6 +96,17 @@
     },
     @"target": self.reactTag,
   });
+}
+
+- (NSString *)text
+{
+  return _text;
+}
+
+- (void)setText:(NSString *)text
+{
+  _text = text;
+  _previousAttributedText = _localAttributedText;
 }
 
 #pragma mark - RCTUIManagerObserver
