@@ -1008,6 +1008,7 @@ const TextInput = createReactClass({
   },
 
   _onTextInput: function(event: Event) {
+    // $FlowFixMe
     this.props.onTextInput && this.props.onTextInput(event);
   },
 
